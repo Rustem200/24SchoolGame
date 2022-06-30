@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
     public Vector2 firstTap, secondTap;
     public bool click = false;
-    // Update is called once per frame
+
     void Update()
     {
         if (!click && Input.touchCount > 0)
