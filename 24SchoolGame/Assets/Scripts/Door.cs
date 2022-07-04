@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private Transform _door;
+    [SerializeField] private GameObject _door;
+    [SerializeField] private float _speed;
+
 
     public void ClosureDoor()
     {
-        _door.rotation = Quaternion.Euler(0, 0 , 0);
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(0, 0, 0));
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * _speed);
     }
 
     public void OpenDoor()
     {
-        _door.rotation = Quaternion.Euler(0, 180, 0);
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(0, 0, 90));
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * _speed);
     }
 }
