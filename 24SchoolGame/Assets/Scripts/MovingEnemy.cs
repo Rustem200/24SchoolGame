@@ -8,7 +8,7 @@ public class MovingEnemy : MonoBehaviour
     [SerializeField] private float _movingEnemyTime;
     [SerializeField] private Enemy[] _enemy;
     [SerializeField] private int _enemySize;
-    [SerializeField]private int _enemyIndex;
+    [SerializeField] private int _enemyIndex;
 
     private void Start()
     {
@@ -37,9 +37,8 @@ public class MovingEnemy : MonoBehaviour
             _enemyIndex++;
 
             if (_enemyIndex == _enemySize)
-            {
                 StopAllCoroutines();
-            }
+
             _enemyPosition[_enemyIndex].SetActive(true);
 
         }

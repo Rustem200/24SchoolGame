@@ -7,7 +7,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] private float _attackTime;
     [SerializeField] private GameObject _scrimmer;
     [SerializeField] private GameObject _enemy;
-    [SerializeField] private ScaringEnemy _scaringEnemy;
+    [SerializeField] private ScaringEnemy _scaring;
     [SerializeField] private MovingEnemy _movingEnemy;
     [SerializeField] private GameObject _scaringObject;
     
@@ -23,15 +23,15 @@ public class EnemyAttack : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_attackTime);
-            if (_scaringEnemy.isScaring == false)
+            if (_scaring.isScaring == false)
             {
                 _enemy.SetActive(false);
                 _scrimmer.SetActive(true);
             }
-            else if(_scaringEnemy.isScaring == true)
+            else if(_scaring.isScaring == true)
             {
                 _movingEnemy.StartMoving();
-                _scaringEnemy.Scaring();
+                _scaring.Scaring();
                 _scaringObject.SetActive(false);
             }
         }

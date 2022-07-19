@@ -9,6 +9,11 @@ public class ScaringEnemy : MonoBehaviour
     private int _scaringNumber;
     public bool isScaring;
 
+   
+    
+
+
+
     public void IncreaseIsScaring(bool isScaringNumberIncrease)
     {
         _isScaringNumberIncrease = isScaringNumberIncrease;
@@ -37,11 +42,9 @@ public class ScaringEnemy : MonoBehaviour
         {
                 yield return new WaitForSeconds(_scaringTime);
                 _scaringNumber += 10;
-                if(_scaringNumber >= 30)
-                {
-                    isScaring = true;
-                }
-                else       
+            if (_scaringNumber >= 30)
+                isScaring = true;
+            else       
                 isScaring = false;
             
         }
