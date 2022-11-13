@@ -16,7 +16,7 @@ public class Scrimmer : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(6);
-            _sceneController.Scenes(1);
+            _sceneController.Scenes(0);
         }
     }
 }

@@ -10,9 +10,16 @@ public class Timer : MonoBehaviour
     private int _hour;
     [SerializeField] private GameObject _adolfAndreevich;
     [SerializeField] private GameObject _skovorodka;
-    [SerializeField] private GameObject _kyzykhaEvil;
     [SerializeField] private Text _text;
     [SerializeField] private SceneController _sceneController;
+    [SerializeField] private KyzykhaEvilScrimmer _kyzykhaEvil;
+    [SerializeField] private GameObject _kyzylhaPicture;
+
+
+    private void Start()
+    {
+        _kyzykhaEvil.OffKyzykhaEvilAnim();
+    }
 
     private void Update()
     {
@@ -28,10 +35,12 @@ public class Timer : MonoBehaviour
 
         if (_hour >= 2)
             _adolfAndreevich.SetActive(true);
+        if (_hour == 3)
+            _kyzykhaEvil.OnKyzykhaEvilAnim();
+        if (_hour >= 3)
+            _kyzylhaPicture.SetActive(true);
         if (_hour >= 4)
             _skovorodka.SetActive(true);
-        if (_hour >= 5)
-            _kyzykhaEvil.SetActive(true);
 
         if(_hour > 6)
             _sceneController.Scenes(2);

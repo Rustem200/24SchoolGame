@@ -20,7 +20,7 @@ public class MovingEnemy : MonoBehaviour
     public void StartMoving()
     {
         StartCoroutine(Moving());
-        _enemyIndex = Random.Range(0, _enemyPosition.Length);
+        _enemyIndex = Random.Range(0, _enemyPosition.Length - 1);
         _enemyPosition[_enemySize].SetActive(false);
     }
 
